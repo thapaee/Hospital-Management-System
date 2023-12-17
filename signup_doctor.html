@@ -1,0 +1,105 @@
+<html>
+<head>
+<style>
+body{
+   margin:0px;
+   background : linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+.container{
+     padding:10px;
+     position:fixed;
+     top:50%;
+     left:50%;
+     transform: translate(-50%,-50%);
+     width:200px;
+     box-shadow:10px 15px 135px ;
+     background-color:white;
+     border-radius:5%;
+}
+.form-group{
+     margin-bottom:1em;
+}
+.form-label{
+   display:block;
+   transform:translateY(-1.25em);
+   transform-origin:0 0;
+   transition:all .3s;
+}
+.form-control{
+ width:100%;
+ height:2em;
+ border-style:none none solid none;
+
+ transition:all .5s;
+
+}
+.form-control::placeholder{
+   color:transparent;
+}
+.form-control:focus{
+      outline:none;
+      box-shadow:none;
+      border-color:orange;
+}
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label
+{
+      transform:translateY(-2.25em);
+}
+h1{
+  color:black;
+}
+.form-submit{
+    background-image: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    width:100%;
+    radius:5%;
+    height:2em;
+    border:none;
+    font-size:1em;
+    font-weight:bold;
+    color:white;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1><center>Sign Up</center></h1>
+<form action="send_otp_doctor.php" method="POST" class="form" autocomplete="off">
+   <div class="form-group">
+   <input type="text" name="username" class="form-control" placeholder="name">
+   <label class="form-label">Full Name</label>
+   </div>
+   <div class="form-group">
+   <input type="email" name="email" class="form-control" placeholder="email">
+   <label class="form-label">Email Id</label>
+   </div>
+   <div class="form-group">
+   <label>Choose Gender</label>
+
+   <select name="select">
+   <option value="male">Male</option>
+   <option value="female">female</option>
+   </select>
+   </div>
+<div>
+   <input type="text" name="phone" class="form-control" placeholder="phone">
+   <label class="form-label">Phone number</label>
+   </div>
+   <div>
+   <input type="text" name="department" class="form-control" placeholder="phone">
+   <label class="form-label">Department</label>
+   </div>
+
+   <div>
+   <input type="password" name="pwd" class="form-control" placeholder="password">
+   <label class="form-label">password</label>
+   </div>
+   <div>
+   <input type="password" name="repwd" class="form-control" placeholder="password">
+   <label class="form-label">Re-enter password</label>
+   </div>
+   <input type="submit" name="submit" value="Sign up" class="form-submit">
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<html>
+<head>
+<style>
+span::before {
+            content: "";
+            animation: animate infinite 3s;
+            padding-left: 200px;
+            color:red;
+
+        }
+@keyframes animate {
+
+            0% {
+                content: "W";
+            }
+            5%{
+                content:"We";
+            }
+            10%{
+                content:"Wea";
+            }
+
+            15%{
+                content:"Wear";
+            }
+
+            20%{
+                content:"Wear M";
+            }
+            25% {
+                content: "Wear Ma";
+            }
+
+            30% {
+                content: "Wear Mas";
+            }
+
+            35%{
+                content:"Wear Mask";
+            }
+
+            40%{
+                content:"Wear Masks";
+            }
+            45%{
+                content:"Wear Masks B";
+            }
+            50%{
+                content:"Wear Masks Be";
+            }
+
+            55%{
+                content:"Wear Masks Be S";
+            }
+
+            60%{
+                content:"Wear Masks Be Sa";
+            }
+
+            65%{
+                content:"Wear Masks Be Saf";
+            }
+
+            70%{
+                content:"Wear Masks Be Safe";
+            }
+
+            75%{
+                content:"Wear Masks Be Safe!!!";
+            }
+        }
+
+body{
+background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+margin:0px;
+}
+.content{
+   width:800px;
+   border:1px solid;
+   
+   margin-left:18%;
+}
+.simple{
+    background-color:#D3D3D3;
+    width:100%;
+    display:inline-block;
+position:fixed;
+}
+.qwe{
+    border:none;
+    color:white;
+    text-align:center;
+    background-color:#D3D3D3;
+    display:inline-block;
+    padding:10px;
+    font-size:16px;
+
+    height:50px;
+}
+.imag{
+
+    width:50px;
+    height:50px;
+}
+.qwe:hover{
+  color:red;
+  background-color:white;
+}
+.middle{
+   float:left;
+   display:inline-block;
+    padding-top:10px;
+    font-size:30px;
+    color:white;
+    text-weight:bolder;
+}
+.t{
+z-index:2;
+width:50px;
+height50px;
+radius:50%;
+position:relative;
+}
+
+#opt{
+    display:none;
+    position:relative;
+    z-index:4;
+    float:right;
+}
+a{
+  text-decoration:none;
+}
+
+.animation{
+    animation-name: ambulan;
+    animation-duration: 8s;
+    width:100px;
+    height: 47px;
+    position:relative;
+    background-image: url('r.gif');
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+#emer{
+  color:red;
+  font-size:25px;
+}
+#services{
+  background-color:powderblue;
+  font-size:25px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="simple">
+    <div style="float:left;">
+         <img src="sym.png" class="imag"></img>
+    </div>
+    <div class="middle">ABC Hospital<span></span></div>
+
+    <div style="float:right;" id="e">
+         <a href="try.html"><button class="qwe">Home</button></a>
+         <button class="qwe">About</button>
+         <a href="services.html"><button class="qwe">Services</button></a>
+         
+         <button class="qwe" onmouseover="document.getElementById('opt').style.display='block';document.getElementById('e').style.display='none'">Login/Signup</button>
+    </div>
+</div>
+<div id="opt" onmouseleave="document.getElementById('opt').style.display='none';document.getElementById('e').style.display='block'">
+     <button class="qwe"><a href="doctor.php">Doctor</a></button>
+     <button class="qwe"><a href="patient.php">Patient</a></button>
+     <button class="qwe"><a href="admin.php">Administration</a></button>
+</div>
+
+<div class="content">
+  <br><br><br>
+     <center><p><strong>ABC Hospital</strong></p>
+     <p> We are always here to provide you service for 24 hours. We were extablished on 1999 AD and have been continuously providing service from 1999.
+     We provide services like X-RAY,CT-Scan,Emergency services,ECG,EEG and many more.</p>
+     <p> We have a team of experienced Doctors and nurses. We are very greatful towards the hospital staffs who are continuously working without fear in this time of pandemic</p>
+     <p> We are operationg isolation ICUs for covid patients in as low cost as possible. We are continuously negotiating with medicare companies to bring as many ventilators as possible.
+      We are also conducting blood donation programs throughout the country to fulfill the demand of blood in efficient cost during the covid crisis.</p>
+     <p> We are also accepting donations from any of our well eishers. Please contact our financial staffs for such reasons</p>
+    
+     <button id="services">Join us to enjoy our services</button>
+
+</div>
+
+
+</body>
+</html>

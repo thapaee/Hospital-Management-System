@@ -1,0 +1,131 @@
+<html>
+<head>
+<style>
+body{
+  margin:0;
+  background-color: #c0c0c0;
+}
+.navigation{
+width:15%;
+height:100%;
+position:fixed;
+background-color:lightblue;
+margin: 0;
+}
+.navigation button{
+  width:100%;
+  border:none;
+  display:inline-block;
+  padding:15px;
+  background-color:lightblue;
+  font-size: 20px;
+  font-weight: bolder;
+
+}
+.navigation button:hover{
+   background-color:black;
+   color:white;
+}
+.top{
+  margin-left:15%;
+}
+.docno{
+  margin-left:18%;
+  background-color:rgb(255,255,240);
+  width:250px;
+  height:200px;
+  margin-top: 2%;
+  float:left;
+  display:inline-block;
+
+  box-shadow:0px 10px 10px gray;
+}
+.patientno{
+  margin-left:5%;
+  background-color:white;
+  width:250px;
+  height:200px;
+  margin-top: 2%;
+  float:left;
+  display:block;
+  box-shadow:0px 10px 10px gray;
+}
+.round{
+  width:200px;
+  height:200px;
+  border-radius: 50%;
+  background-color: red;
+  background-image: url('admin.png');
+}
+.doctable{
+  clear:both;
+  margin-left:18%;
+  background-color: white;
+  width: 500px;
+  height: 300px;
+  margin-top: 2%;
+  float:left;
+  display:inline-block;
+  box-shadow:0px 10px 10px gray;
+}
+.patienttable{
+  margin-left:2%;
+  background-color: white;
+  width: 500px;
+  height: 300px;
+  margin-top: 2%;
+  float:left;
+  display:inline-block;
+  box-shadow:0px 10px 10px gray;
+
+}
+.count{
+    text-align:center;
+    font-size:50px;
+    font-weight:bolder;
+
+}
+table{
+  width:100%;
+}
+</style>
+</head>
+<body>
+
+<div class="navigation">
+  <div class="round">
+  </div>
+    <button>Overview</button>
+    <button>Doctor</button>
+    <button>Patient</button>
+    <button>Profile</button>
+    <button>Sign Out</button>
+</div>
+
+<div class="top"><center><h2>Add/Remove doctors</h2></center><hr></div>
+<div class="big">
+
+<?php
+$conn=mysqli_connect("localhost","root","","testdb");
+if(!$conn){
+   die("failed");
+}
+
+$h=mysqli_query($conn,"Select * from doctor;");
+$r=mysqli_num_rows($h);
+if($r>0){
+   echo "<table><tr><td colspan=4 style='background-color:powderblue;'><center><h4>Doctors</h4></center></td></tr>";
+  echo "<tr><td>S.No.</td><td>Doctor name</td><td>Department</td><td>Mobile</td><td></td></tr>";
+   $count=0;
+   while($row=mysqli_fetch_assoc($h)){
+       echo "<tr><td>" . $row["ID"]. "</td><td>" . $row["Name"]. "</td><td> " . $row["Department"]. "</td><td>".$row["Phone"]."</td><td><button class='remove'>Remove<button></td></tr>";
+ 
+}
+
+}
+echo "</table>";
+
+?>
+
+
+</div>
